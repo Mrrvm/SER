@@ -86,29 +86,35 @@ there may be clock drifts, scalability problems and its har to adapt this kind o
 If contention-based, it's simpler, scalable, adapts well to changes and to traffic load and has no signalingsync overhead.
 But, is prone to collisions, idle listening and overheading.
   
+### Contention-base MAC
+
 Regarding Contention-based MAC, basic ideas are ALOHA and its son, CSMA (Carrier Sense Multiple Access).
 The latter takes into account the collisions, but it can suffer from the exposed and hidden terminal scenario.
   
-### Exposed Terminal Scenario
+There is CSMA/CR,CD and CA. 
+CD detecs the collision, and destroys everything.
+CA avoids the collision, by sending a warning.
+  
+#### Exposed Terminal Scenario
 
 It happens when the sender, S1, knows there is a another sender, S2, close. But does not know where the receivers,
 R1 and R2 are. S1 senses S2 is sending a message to R2, so it doesn't send afraid of interference on receiving.
 But R1 and R2 are far away from each other and nothing would happen, but S1 didn't know that.
 
-### Hidden Terminal Scenario
+#### Hidden Terminal Scenario
 
 This happens when A can communicate with B. 
 C can also communicate with B. 
 However, A and C cannot communicate with each other since 
 they cannot sense each other on the network, because they are out of range of each other.
   
-### Shut up senders
+#### Shut up senders
 
 To prevent this, receivers can send a shut up message while or beofre receiving. On the first option
 the same channel on where the reception is occuring witll be busy. 
 On the latter, the intereferers need to store the information, this is called RTS/CTS.
 
-### RTS/CTS - MACA Protocol
+#### RTS/CTS - MACA Protocol
 
 B ask C is he can receive the transmission (Request To Send - RTS).
 C agrees, sending out a Clear To Send - CTS.
@@ -117,10 +123,36 @@ B sends, C acks.
 And this, my friends, it's what is called a MACA protocol, and does not fucking solve the 
 hidden/exposed terminal problems, neither reduces energy.
   
-  
+#### Other protocols
 
+Other protocols are: 
+- PAMAS (Power Access Multiaccess with Signaling), same as MACA, but receiver sends 
+a busy tone when receiving data. Ongoing transmission nearby destroy RTS by busy tone.
+- S-MAC, same as MACA but clustered nodes have sleeping times, and times where they can exchange information.
+- Timeout-MAC same as S-MAC, but where there is no traffic, it goes to sleep. The problem 
+here is that when a node is waiting for another node's trasmission it might go to sleep.
+- D-MAC
+- Preamble Sampling
+- B-MAC I and II
+- SCP-MAC
 
+### Scheduled-based MAC
 
+- WiDom
+- TRAMA, based on priorities, the hidden nodes problem can happen here too. 
+If a node doesn't node about other node's existance, thus priority.
 
-  
-  
+### IEEE
+
+Combines contention and scheduled MAC.
+
+### Others
+
+- LEACH (Low-Energy Adaptive Clustering HIerarchy), dense network of nodes, reporting to a central sink, each node can 
+reach sink directly.
+- SMACS, set up directional links between neighboring nodes 
+- LEMMA
+- Wakeup Radio MAC protocols
+- RT-Link (TDMA - Time Division Multiple Access)+ALOHA)
+
+## Bluetooth
