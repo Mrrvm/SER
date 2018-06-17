@@ -49,11 +49,11 @@ To allow an accurate syncronization of receivers sampling clocks, sometimes bit-
 ### Errors
 
 There are a few ways to detect errors: 
-	- Bit errors, wrong sumcheck.
-	- Bit-stuffing errors, more than five consecutive bits with the same polarity.
-	- CRC errors, mismatch between sent and received CRC.
-	- ACK errors, lack of acknowledgment.
-	- Form errors, violation of frame form.
+- Bit errors, wrong sumcheck.
+- Bit-stuffing errors, more than five consecutive bits with the same polarity.
+- CRC errors, mismatch between sent and received CRC.
+- ACK errors, lack of acknowledgment.
+- Form errors, violation of frame form.
 When one of these occurs, an error frame is bradcasted.
 
 Each node has 2 counters, Transmit-Error-Counter (TEC) and Receive-Error-Counter (REC). Nodes are a failure to the world when they have an increment bigger than correct nodes. To confine the errors, the nodes can make use of 3 different states, error active (operating normally), error peassive (wait 8-bit idle period before doing anything) and Off-bus (does absolutely nothing).
