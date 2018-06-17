@@ -155,4 +155,48 @@ reach sink directly.
 - Wakeup Radio MAC protocols
 - RT-Link (TDMA - Time Division Multiple Access)+ALOHA)
 
-## Bluetooth
+## Energy Management
+
+### Energy Scavenge
+- Light
+- Temperature gradients
+- Vibrations
+- Pressure variation
+- Air/liquid flow
+
+### CPU power consumption
+
+Power vs Energy, heat depends on power consumption, battery life depends on energy consumption.
+
+### CMOD power consumption
+- Voltage drops (V^2)
+- Toggling
+- Leakage
+
+### Power Saving strategies
+- Reduce power supply voltage
+- Run at lower clock frequency
+- Disconnect parts from power supply if not needed
+- Disable functions if not needed
+
+Goinf into power-down modes can cost time and energy, it must be determined if it's worth.
+
+### Power management styles
+- Static, does not depend on CPU activity
+- Dynamic
+
+To reduce power, race-to-dark is used when the consumptions is dominated by static power. 
+Basically, run as fast as possible and then remove power supply.
+
+
+
+
+
+
+
+
+
+
+
+
+
