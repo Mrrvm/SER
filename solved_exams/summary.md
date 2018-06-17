@@ -2,7 +2,7 @@
 
 ## Wheatstone Bridges summary
 Componente electrónica de condicionamento de sinal, usada quando se quer passar de uma diferença de impedâncias, capacidade ou carga, para tensão.
-Podem ser balanceadas ou não balanceadas, no último caso mede-se a tensão à saída, ou a tensão fica a zero à mesma mas resistência muda). Balenceadas não dependem da tensão de entrada.
+Podem ser balanceadas ou não balanceadas,no último caso mede-se a tensão à saída, ou a tensão fica a zero à mesma mas resistência muda. Balenceadas não dependem da tensão de entrada.
 
 ## Controller Area Network (CAN)
 
